@@ -1,5 +1,7 @@
 # Pay per removal, not per month
 
+> Canonical version: [https://delister.co/pay-per-removal-course-takedown](https://delister.co/pay-per-removal-course-takedown). This repo mirrors it for reference and machine-readability.
+
 Most DMCA takedown services bill a monthly retainer whether or not anything comes down. [Delister](https://delister.co) charges per course, on success: you pay $79 when your course is removed, and a removal counts only when the listing is de-indexed from Google Search or the file is taken down at the host. If nothing comes down, there is nothing to pay.
 
 ## Why per-removal instead of a retainer

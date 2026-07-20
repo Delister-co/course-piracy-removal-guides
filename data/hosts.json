@@ -1,0 +1,94 @@
+{
+  "_about": "Where a pirated online course actually lives, and how to get it removed. First-hand routes and confirmation methods used by Delister (https://delister.co) on real filings. CC BY 4.0. Corrections and additions welcome via pull request.",
+  "_updated": "2026-07-20",
+  "_confirmation_note": "Confirm a removal at the FILE, not the listing page. A listing can stay up while pointing at a file that is already dead. Some ISPs also intercept piracy domains and serve a block page with HTTP 200, so a raw request can read 'still live' when the site is unreachable or already down. When a host is on such a network, verify through a server-side text proxy (for example https://r.jina.ai/<url>) and resolve DNS over HTTPS rather than the local resolver.",
+  "file_hosts": [
+    {
+      "name": "MEGA",
+      "domains": ["mega.nz", "mega.io"],
+      "dmca_contact": "copyright@mega.io",
+      "method": "Email the designated copyright agent, or use the in-app report form. Name the exact file or folder link.",
+      "confirm": "MEGA API: POST https://g.api.mega.co.nz/cs?n=<handle> with body [{\"a\":\"f\"}]. Returns -16 (EBLOCKED, taken down), -9 (ENOENT, deleted), or a JSON node (still live). The <handle> is the string after /folder/ or /file/ in the link, before any # key.",
+      "typical_response": "days",
+      "notes": "Compliant mainstream host. Removing the file at MEGA kills every listing that links to it at once."
+    },
+    {
+      "name": "Pixeldrain",
+      "domains": ["pixeldrain.com"],
+      "dmca_contact": "abuse@pixeldrain.com",
+      "method": "Email in English. Line one must say it is a copyright infringement notice (their classifier keys on that phrasing; 'stolen' or 'theft' is too vague). Put the pixeldrain file links in the body, complete and unobfuscated. No attachments.",
+      "confirm": "GET https://pixeldrain.com/api/file/<id>/info -> availability field reads 'unavailable_for_legal_reasons' when taken down; the download endpoint https://pixeldrain.com/api/file/<id> returns HTTP 451.",
+      "typical_response": "first report is reviewed by hand, then the sender address is whitelisted and later reports process automatically",
+      "notes": "Netherlands operator with a published abuse process. Worth getting the first notice exactly right."
+    },
+    {
+      "name": "Send",
+      "domains": ["send.now", "send.cm"],
+      "dmca_contact": "copyright@send.now",
+      "method": "Plain-text email with the seven DMCA elements (owner, agent authority, agent contact, work + original URL, infringing URLs, good-faith statement, penalty-of-perjury statement and signature).",
+      "confirm": "Fetch the file URL: a removed file shows 'The file you were looking for' (does not exist).",
+      "typical_response": "days",
+      "notes": "File host, not a listing site. Formerly send.cm, now branded send.now."
+    },
+    {
+      "name": "Podaon SIA",
+      "domains": ["gfxdrive.com"],
+      "dmca_contact": "abuse@podaon.com",
+      "method": "Email the provider's RIPE abuse contact. Podaon is an EU-established hosting provider and RIPE LIR (Riga, Latvia), so it carries DSA notice-and-action duties and a mandated abuse mailbox.",
+      "confirm": "Fetch the file/listing URL through a server-side proxy (see _confirmation_note).",
+      "typical_response": "unconfirmed",
+      "notes": "Provider behind in-house lockers such as gfxdrive.com when the locker's own /dmca page is an empty stub. Identify the host via WHOIS/RIPE (IP -> netname -> org -> abuse contact)."
+    }
+  ],
+  "listing_sites": [
+    {
+      "name": "design.rip",
+      "domains": ["design.rip"],
+      "dmca_contact": "hello@design.rip",
+      "method": "Use the site's own intake at https://design.rip/dmca (separate from any CDN relay).",
+      "confirm": "The listing page returns HTTP 404.",
+      "typical_response": "days",
+      "notes": "Listing site with a working direct takedown channel."
+    },
+    {
+      "name": "Psdly",
+      "domains": ["psdly.co.uk", "psdly.com", "psdly.io", "psdly.net"],
+      "dmca_contact": "admin@psdly.com",
+      "method": "Site's own 'DMCA - Urgent Content Remove' form, or email the admin address.",
+      "confirm": "The listing page is gone or no longer serves the course.",
+      "typical_response": "slow / may not respond",
+      "notes": "The .co.uk, .com, .io and .net domains 301-redirect between each other and are the same site."
+    }
+  ],
+  "search_and_cdn": [
+    {
+      "name": "Google Search removal",
+      "domains": ["google.com"],
+      "dmca_contact": "https://dmca.google.com (signed-in form)",
+      "method": "File a Search removal request naming the infringing URLs. De-indexing stops the page appearing in results, where nearly all the traffic comes from, even when the host ignores notices.",
+      "confirm": "Google Removals Dashboard (reportcontent.google.com/dashboard), not a live search spot-check.",
+      "typical_response": "1 to 7 days",
+      "notes": "A URL already carrying a settled counter-notice returns status 'Reinstated' and will not be removed again on a fresh notice; that requires court action, not a refiled form."
+    },
+    {
+      "name": "Cloudflare abuse",
+      "domains": ["cloudflare.com"],
+      "dmca_contact": "https://abuse.cloudflare.com/dmca",
+      "method": "One submission per hostname; a human ticks the Turnstile checkbox.",
+      "confirm": "Cloudflare emails an acknowledgment with a case ID; it forwards the complaint to the origin host and does not itself remove content.",
+      "typical_response": "forward only",
+      "notes": "Lowest-yield layer: Cloudflare relays to the host rather than taking anything down. Go to the host directly where possible."
+    }
+  ],
+  "unactionable": [
+    {
+      "name": "Torrents / magnet links",
+      "domains": [],
+      "dmca_contact": null,
+      "method": null,
+      "confirm": null,
+      "typical_response": null,
+      "notes": "A magnet or torrent has no host holding a file to notice; the content moves peer to peer. Notice-and-takedown does not apply. Be honest about this rather than leaving it looking unhandled."
+    }
+  ]
+}

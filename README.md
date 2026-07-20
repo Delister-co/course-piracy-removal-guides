@@ -22,6 +22,14 @@ Most piracy listings do not hold the file. A download aggregator or leak forum r
 | Send (send.now / send.cm) | copyright contact | [guides/send.md](guides/send.md) |
 | Pricing model | Pay per removal, not per month | [guides/pay-per-removal.md](guides/pay-per-removal.md) |
 
+## Takedown-route data (machine-readable)
+
+A structured table of where each file host and listing site sends a DMCA notice, and how to confirm a file is actually down, is in [DATA.md](DATA.md) (human-readable) and [data/hosts.json](data/hosts.json) (machine-readable). Built from real filings, CC BY 4.0, corrections welcome by pull request.
+
+## Check whether a file is down (tool)
+
+An open-source CLI that tells you if a hosted file is still live or has been taken down, using the same first-hand methods (MEGA API code, Pixeldrain availability, Send status): https://github.com/Delister-co/course-takedown-checker
+
 ## Venue-specific listing-site guides
 
 Full guides for individual listing sites (GFXFather, HacksNation, DownloadPirate, Psdly, NullPK, design.rip, FreeCourseSite, Online-Courses.club, AEBlender) live on the site:

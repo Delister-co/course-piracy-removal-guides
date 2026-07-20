@@ -1,5 +1,7 @@
 # How to remove your course from Send (send.now / send.cm)
 
+> Canonical version: [https://delister.co/remove/send-now](https://delister.co/remove/send-now). This repo mirrors it for reference and machine-readability.
+
 Send, which runs on send.now and send.cm, is a file host rather than a listing site. Piracy aggregators upload a course to Send and then link to it. Reaching Send directly removes the file itself, which is what ends the distribution.
 
 ## Does Send honor DMCA notices?

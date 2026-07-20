@@ -1,5 +1,7 @@
 # How to remove your course from MEGA (mega.nz)
 
+> Canonical version: [https://delister.co/remove/mega](https://delister.co/remove/mega). This repo mirrors it for reference and machine-readability.
+
 When your course shows up on a piracy site, the download itself usually is not on that site. It sits on a file host like MEGA (mega.nz), and the listing just links to it. That works in your favor: MEGA is a compliant host with a designated copyright agent, so a notice sent to the right place removes the file, not just one link to it.
 
 ## Does MEGA honor DMCA notices?

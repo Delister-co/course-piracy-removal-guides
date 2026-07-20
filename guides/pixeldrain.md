@@ -1,5 +1,7 @@
 # How to remove your course from Pixeldrain
 
+> Canonical version: [https://delister.co/remove/pixeldrain](https://delister.co/remove/pixeldrain). This repo mirrors it for reference and machine-readability.
+
 Pixeldrain (pixeldrain.com) is a file host, not a listing site. When your course appears on a piracy aggregator, the download button often points at a Pixeldrain file. Reaching Pixeldrain directly removes the download itself, so every listing pointing at that file goes dead at once.
 
 ## Does Pixeldrain honor copyright notices?
