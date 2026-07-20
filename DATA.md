@@ -35,4 +35,4 @@ Where a pirated online course actually lives, and how to get it removed. First-h
 
 ---
 
-Want this done for you across every site a course turns up on, paid only when a listing actually comes down? That is what [Delister](https://delister.co) does, $79 per course on success.
+Want this done for you across every site a course turns up on, paid only when a listing comes down? That is what Delister does, $79 per course on success. Start with a free scan that shows where a course is being distributed: https://delister.co/free-scan.html
